@@ -10,13 +10,13 @@ O sistema consiste em calcular o valor total de um pedido com base nas seguintes
 
 1. **Desconto:** O valor do desconto percentual é aplicado sobre o valor básico do pedido.
 
-2. **Frete:** O valor do frete é calculado de acordo com a tabela abaixo (baseado no valor básico do pedido sem desconto):
+2. **Frete:** O valor do frete é calculated de acordo com a tabela abaixo (baseado no valor básico do pedido sem desconto):
 
-| Valor básico do pedido (sem desconto) | Frete | 
-| ----- | ----- | 
-| Abaixo de R\$ 100.00 | R\$ 20.00 | 
-| De R\$ 100.00 até R$ 200.00 exclusive | R\$ 12.00 | 
-| R\$ 200.00 ou mais | Grátis | 
+| Valor básico do pedido (sem desconto) | Frete     |
+| ------------------------------------- | --------- |
+| Abaixo de R\$ 100.00                  | R\$ 20.00 |
+| De R\$ 100.00 até R$ 200.00 exclusive | R\$ 12.00 |
+| R\$ 200.00 ou mais                    | Grátis    |
 
 3. **Valor Total:** O valor total do pedido é obtido aplicando o desconto ao valor básico do pedido e adicionando o valor do frete.
 
@@ -24,18 +24,18 @@ O sistema consiste em calcular o valor total de um pedido com base nas seguintes
 
 ### Entrada
 
-| Entrada | Exemplo 1 | Exemplo 2 | Exemplo 3 | 
-| ----- | ----- | ----- | ----- | 
-| **Código do pedido:** | 1034 | 2282 | 1309 | 
-| **Valor básico:** | 150.00 | 800.00 | 95.90 | 
-| **Porcentagem de desconto:** | 20.0 | 10.0 | 0.0 | 
+| Entrada                      | Exemplo 1 | Exemplo 2 | Exemplo 3 |
+| ---------------------------- | --------- | --------- | --------- |
+| **Código do pedido:**        | 1034      | 2282      | 1309      |
+| **Valor básico:**            | 150.00    | 800.00    | 95.90     |
+| **Porcentagem de desconto:** | 20.0      | 10.0      | 0.0       |
 
 ### Saída
 
-| Saída | Exemplo 1 | Exemplo 2 | Exemplo 3 | 
-| ----- | ----- | ----- | ----- | 
-| **Pedido código:** | 1034 | 2282 | 1309 | 
-| **Valor total:** | R\$ 132.00 | R\$ 720.00 | R\$ 115.90 | 
+| Saída              | Exemplo 1  | Exemplo 2  | Exemplo 3  |
+| ------------------ | ---------- | ---------- | ---------- |
+| **Pedido código:** | 1034       | 2282       | 1309       |
+| **Valor total:**   | R\$ 132.00 | R\$ 720.00 | R\$ 115.90 |
 
 ## 📁 Estrutura do Projeto
 
@@ -44,13 +44,16 @@ desafioCalcularPedido/
 ├── src/
 │   ├── main/
 │   │   ├── java/
-│   │   │   └── com/devsuperior/desafioCalcularPedido/
-│   │   │       ├── entities/
-│   │   │       │   └── Order.java
-│   │   │       ├── services/
-│   │   │       │   ├── OrderService.java
-│   │   │       │   └── ShippingService.java
-│   │   │       └── DesafioCalcularPedidoApplication.java
+│   │   │   └── br/
+│   │   │       └── com/
+│   │   │           └── ivanferreira/
+│   │   │               └── desafioCalcularPedido/
+│   │   │                   ├── entities/
+│   │   │                   │   └── Order.java
+│   │   │                   ├── services/
+│   │   │                   │   ├── OrderService.java
+│   │   │                   │   └── ShippingService.java
+│   │   │                   └── DesafioCalcularPedidoApplication.java
 │   │   └── resources/
 │   │       └── application.properties
 └── pom.xml
@@ -92,21 +95,18 @@ classDiagram
 
 ### 🧩 Componentes do Sistema
 
-* **`Order` (Entidade/Modelo):** Representa o objeto de dados do pedido contendo `code` (código), `basic` (valor básico) e `discount` (porcentagem de desconto).
-
-* **`OrderService` (Serviço):** Componente anotado com `@Service`, responsável por operações referentes a pedidos e pelo cálculo do valor final combinando o desconto com o frete.
-
-* **`ShippingService` (Serviço):** Componente anotado com `@Service`, responsável por operações referentes ao frete conforme a regra de valor básico.
+- **`Order` (Entidade/Modelo):** Representa o objeto de dados do pedido contendo `code` (código), `basic` (valor básico) e `discount` (porcentagem de desconto).
+- **`OrderService` (Serviço):** Componente anotado com `@Service`, responsável por operações referentes a pedidos e pelo cálculo do valor final combinando o desconto com o frete.
+- **`ShippingService` (Serviço):** Componente anotado com `@Service`, responsável por operações referentes ao frete conforme a regra de valor básico.
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Linguagem & Framework:** Java 17+, Spring Boot
-
-* **Build & Dependências:** Apache Maven
+- **Linguagem & Framework:** Java 17+, Spring Boot
+- **Build & Dependências:** Apache Maven
 
 ## 🍃 Sobre
 
-Teoria e projeto prático desenvolvido durante a formação **Desenvolvedor Moderno** da plataforma 🍃 **DevSuperior**.
+Desafio prático desenvolvido durante a formação Desenvolvedor Moderno - Coleção Java Spring da plataforma 🍃 **DevSuperior**.
 
 ## 👤 Autor
 
